@@ -1,15 +1,81 @@
-﻿<!DOCTYPE html>
-<html lang="ja">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Popouna Legal</title>
+  <title>Popouna SNS Helper</title>
+  <style>
+    :root {
+      --bg: #fff8f0;
+      --ink: #1f1a17;
+      --accent: #ff6b4a;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, #ffe4c4 0%, transparent 40%),
+        radial-gradient(circle at 90% 10%, #ffd6e7 0%, transparent 35%),
+        var(--bg);
+      line-height: 1.6;
+    }
+    header, main, footer { max-width: 42rem; margin: 0 auto; padding: 1.25rem 1rem; }
+    header { padding-top: 2.5rem; }
+    .brand { font-size: 0.95rem; letter-spacing: 0.04em; color: var(--accent); font-weight: 700; }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); line-height: 1.2; margin: 0.4rem 0 0.75rem; }
+    .lead { font-size: 1.05rem; margin: 0 0 1.5rem; }
+    .panel {
+      background: var(--card);
+      border: 1px solid #f0e2d4;
+      border-radius: 16px;
+      padding: 1rem 1.1rem;
+      margin: 1rem 0;
+    }
+    h2 { font-size: 1.1rem; margin: 0 0 0.5rem; }
+    ol { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+    a { color: var(--accent); }
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+    footer { color: #6b625c; font-size: 0.9rem; padding-bottom: 2.5rem; }
+  </style>
 </head>
 <body>
-  <h1>Popouna Legal</h1>
-  <ul>
-    <li><a href="terms.html">Terms of Service</a></li>
-    <li><a href="privacy.html">Privacy Policy</a></li>
-  </ul>
+  <header>
+    <div class="brand">POPOUNA SNS HELPER</div>
+    <h1>Draft TikTok videos for the Popouna creator account</h1>
+    <p class="lead">
+      Official content workflow for Popouna (@popouna_unagi): prepare videos,
+      upload drafts to TikTok inbox via Content Posting API, then publish in the TikTok app.
+    </p>
+    <nav>
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="https://x.com/popouna_unagi">X / @popouna_unagi</a>
+      <a href="https://charaforio.com/ja/ip/popouna">Charaforio</a>
+    </nav>
+  </header>
+  <main>
+    <section class="panel">
+      <h2>How it works</h2>
+      <ol>
+        <li>Operator prepares a Popouna video and caption.</li>
+        <li>Login Kit connects the official Popouna TikTok account.</li>
+        <li>Content Posting API (<code>video.upload</code>) sends the video as an inbox draft.</li>
+        <li>The operator opens the TikTok notification, reviews, and publishes manually.</li>
+      </ol>
+    </section>
+    <section class="panel">
+      <h2>TikTok products used</h2>
+      <ul>
+        <li><strong>Login Kit</strong> — <code>user.info.basic</code> for account authorization</li>
+        <li><strong>Content Posting API</strong> — <code>video.upload</code> inbox/draft upload only (no Direct Post)</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    Operator: Popouna / @popouna_unagi
+  </footer>
 </body>
 </html>
